@@ -27,7 +27,7 @@ radicale-data/
 └── data/
 ```
 
-Follow the guideline in [Radicale's Website](https://radicale.org/2.1.html#documentation/configuration) to determine what to put in the `radicale.conf` file.
+Follow the guideline in [Radicale's Website](https://radicale.org/v3.html#configuration) to determine what to put in the `radicale.conf` file.
 
 A potential configuration would look like:
 
@@ -35,7 +35,7 @@ A potential configuration would look like:
 
 [server]
 # Bind all addresses - Necessary for allowing connections outside the docker container
-hosts = 0.0.0.0:5232
+hosts = 0.0.0.0:5232, [::]:5232
 dns_lookup = False
 
 [auth]
@@ -57,4 +57,3 @@ docker run -p5232:5232 \
     -v<path>/radicale-data/data:/radicale/data  \
     salessandri/radicale:latest --config "/radicale/config/radicale.conf"
 ```
-
